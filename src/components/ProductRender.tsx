@@ -6,14 +6,14 @@ import { useDelete } from '../hooks/useDelete'
 import EditProductButton from './EditProduct'
 import { useSelector } from 'react-redux'
 import { RootState } from '../redux/store'
+
 interface ProductPropsInterface {
   product: ProductInterface
-
   reload: () => void
 }
 
 const ProductRender = ({
-  product: { id, name, price, description, category, image },
+  product: { id, name, description, category, price, image },
   reload
 }: ProductPropsInterface) => {
   const { isLogged } = useSelector((state: RootState) => state.auth)

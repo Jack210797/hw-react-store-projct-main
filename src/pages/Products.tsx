@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { ProductInterface } from '../types/Product.Interface'
-import { API_ITEMS_PAGE_LIMIT, createUrl } from '../utils/mockApi'
+import { API_ITEMS_PAGE_LIMIT } from '../utils/mockApi'
 import ProductRender from '../components/ProductRender'
 import AddProductButton from '../components/AddProduct'
 import { debounce } from '../utils/debounce'
@@ -13,6 +13,7 @@ import { AppDispatch } from '../redux/store'
 import { fetchAllProducts, selectProducts } from '../redux/productsSlice'
 import { selectProductsError, selectProductsLoading } from '../redux/productsSlice'
 import { RootState } from '../redux/store'
+import Pagination from '../components/form/Pagination'
 
 const Products = () => {
   const [page, setPage] = useState(1)
@@ -20,6 +21,7 @@ const Products = () => {
   const [sort, setSort] = useState('')
   const [order, setOrder] = useState('')
   const [reload, setReload] = useState('0')
+  const [totalProducts, setTotalProducts] = useState(0)
 
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -30,7 +32,11 @@ const Products = () => {
   const { isLogged } = useSelector((state: RootState) => state.auth)
 
   useEffect(() => {
-    dispatch(fetchAllProducts(createUrl(page, name, sort, order)))
+    dispatch(fetchAllProducts({ page, name, sort, order })).then((action) => {
+      if (fetchAllProducts.fulfilled.match(action)) {
+        setTotalProducts(action.payload.data.totalProducts)
+      }
+    })
   }, [dispatch, page, name, sort, order, reload])
 
   const debouncedSetName = debounce(setName, 1000)
@@ -41,6 +47,8 @@ const Products = () => {
     setOrder('')
     inputRef.current && (inputRef.current.value = '')
   }
+
+  const totalPages = totalProducts ? Math.ceil(totalProducts / API_ITEMS_PAGE_LIMIT) : 1
 
   return (
     <div>
@@ -82,6 +90,7 @@ const Products = () => {
               >
                 Previous page
               </button>
+
               <button
                 className="pagination__btn"
                 disabled={products.length < API_ITEMS_PAGE_LIMIT}
@@ -108,6 +117,9 @@ const Products = () => {
               >
                 Previous page
               </button>
+
+              <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} />
+
               <button
                 className="pagination__btn"
                 disabled={products.length < API_ITEMS_PAGE_LIMIT}

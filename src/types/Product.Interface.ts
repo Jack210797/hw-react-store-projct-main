@@ -1,11 +1,9 @@
 export interface ProductInterface {
   id: string
   name: string
-  price: number
   description: string
-  category: string
+  price: number
   image: string
-
-  length: number
-  map: any
+  category: string
+  totalPages: number
 }
