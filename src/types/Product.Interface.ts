@@ -5,5 +5,4 @@ export interface ProductInterface {
   price: number
   image: string
   category: string
-  totalPages: number
 }
