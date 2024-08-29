@@ -6,14 +6,17 @@ import { useDelete } from '../hooks/useDelete'
 import EditProductButton from './EditProduct'
 import { useSelector } from 'react-redux'
 import { RootState } from '../redux/store'
+// import { PaginationInterface } from '../types/Pagination.interface'
 
 interface ProductPropsInterface {
   product: ProductInterface
+  // pagination: PaginationInterface
   reload: () => void
 }
 
 const ProductRender = ({
   product: { id, name, description, category, price, image },
+  // pagination,
   reload
 }: ProductPropsInterface) => {
   const { isLogged } = useSelector((state: RootState) => state.auth)
@@ -45,6 +48,9 @@ const ProductRender = ({
           </EditProductButton>
         </div>
       )}
+      {/* <div>
+        Page {pagination.currentPage} of {pagination.totalPages}
+      </div> */}
     </li>
   )
 }

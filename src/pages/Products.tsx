@@ -110,23 +110,7 @@ const Products = () => {
 
           <div className="buttons-group-down">
             <div className="pagination">
-              <button
-                className="pagination__btn"
-                disabled={page === 1}
-                onClick={() => setPage((prevState) => prevState - 1)}
-              >
-                Previous page
-              </button>
-
               <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} />
-
-              <button
-                className="pagination__btn"
-                disabled={products.length < API_ITEMS_PAGE_LIMIT}
-                onClick={() => setPage((prevState) => prevState + 1)}
-              >
-                Next page
-              </button>
             </div>
           </div>
         </div>
