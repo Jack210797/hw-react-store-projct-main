@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react'
-import { PRODUCT_CATEGORIES } from '../../data/mockData'
+import { PRODUCT_CATEGORIES } from '../../../data/mockData'
 import InputField from './InputField'
 import SelectField from './SelectField'
 import { ProductInterface } from '../../types/Product.Interface'

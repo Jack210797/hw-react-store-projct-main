@@ -2,9 +2,9 @@ import { useState } from 'react'
 import Modal from '../modals/Modal'
 import ProductForm from './form/ProductForm'
 import { ProductInterface } from '../types/Product.Interface'
-import { API_URL } from '../utils/mockApi'
+import { API_URL } from '../../utils/mockApi'
 import { useAdd } from '../hooks/useAdd'
-import { INITIAL_PRODUCT } from '../data/mockData'
+import { INITIAL_PRODUCT } from '../../data/mockData'
 
 const AddProductButton = () => {
   const [showModal, setShowModal] = useState(false)

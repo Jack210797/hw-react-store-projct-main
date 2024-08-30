@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { PostInterface } from '../types/Post.interface'
+import { PostInterface } from '../types/Post.interface.ts'
 import { RootState } from './store.ts'
 import { createFetchThunk } from './createFetchThunk.ts'
 

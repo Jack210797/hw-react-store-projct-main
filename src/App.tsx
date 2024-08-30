@@ -1,13 +1,13 @@
 import './index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import Posts from './pages/Posts'
-import Users from './pages/Users'
-import Todos from './pages/Todos'
-import Products from './pages/Products'
+import Navbar from './frontend/components/Navbar'
+import Home from './frontend/pages/Home'
+import Posts from './frontend/pages/Posts'
+import Users from './frontend/pages/Users'
+import Todos from './frontend/pages/Todos'
+import Products from './frontend/pages/Products'
 import { Provider } from 'react-redux'
-import { store } from './redux/store'
+import { store } from './frontend/redux/store'
 
 const App = () => {
   return (

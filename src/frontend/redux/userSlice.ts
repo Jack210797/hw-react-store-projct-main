@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { UserInterface } from '../types/User.interface'
+import { UserInterface } from '../types/User.interface.ts'
 import { RootState } from './store.ts'
 import { createFetchThunk } from './createFetchThunk.ts'
 

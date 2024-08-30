@@ -1,7 +1,7 @@
 import { FaEdit, FaTrash } from 'react-icons/fa'
 import { ProductInterface } from '../types/Product.Interface'
 import { AxiosError } from 'axios'
-import { API_URL } from '../utils/mockApi'
+import { API_URL } from '../../utils/mockApi'
 import { useDelete } from '../hooks/useDelete'
 import EditProductButton from './EditProduct'
 import { useSelector } from 'react-redux'

@@ -1,4 +1,4 @@
-import { ProductInterface } from '../types/Product.Interface'
+import { ProductInterface } from '../frontend/types/Product.Interface'
 
 export interface ProductCategoriesInterface {
   value: string

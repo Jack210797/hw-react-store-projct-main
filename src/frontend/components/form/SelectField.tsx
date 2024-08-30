@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react'
-import { ProductCategoriesInterface } from '../../data/mockData'
+import { ProductCategoriesInterface } from '../../../data/mockData'
 
 interface SelectFieldPropsInterface {
   id: string

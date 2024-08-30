@@ -1,7 +1,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { ProductInterface } from '../types/Product.Interface'
 import { RootState } from './store'
-import { createUrl } from '../utils/mockApi'
+import { createUrl } from '../../utils/mockApi'
 
 interface ProductStateInterface {
   isLoading: boolean

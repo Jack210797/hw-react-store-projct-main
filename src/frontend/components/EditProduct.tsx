@@ -1,6 +1,6 @@
 import { ReactNode, useState } from 'react'
 import { ProductInterface } from '../types/Product.Interface'
-import { API_URL } from '../utils/mockApi'
+import { API_URL } from '../../utils/mockApi'
 import Modal from '../modals/Modal'
 import ProductForm from './form/ProductForm'
 import { useUpdate } from '../hooks/useUpdate'
