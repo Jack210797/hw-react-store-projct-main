@@ -7,7 +7,7 @@ import {
   deleteTodoByIdHandler
 } from '../controllers/todos.mjs'
 
-import { validateTodoPost, validateTodoPut, validateParamsTodoId } from '../validators/todoValidator.mjs'
+import { validateTodoPost, validateTodoPut, validateParamsTodoId } from '../midleware/validators/todoValidator.mjs'
 
 const todosRouter = Router()
 

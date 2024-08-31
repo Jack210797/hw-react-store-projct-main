@@ -1,7 +1,10 @@
 import { celebrate, Joi, Segments } from 'celebrate'
 
 const userSchema = Joi.object({
-  name: Joi.string().required()
+  userId: Joi.number().integer().positive().required(),
+  id: Joi.number().integer().positive().required(),
+  title: Joi.string().required(),
+  completed: Joi.boolean().required()
 })
 
 const validateTodoPost = celebrate({

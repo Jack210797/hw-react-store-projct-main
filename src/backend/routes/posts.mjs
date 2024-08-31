@@ -1,4 +1,4 @@
-import express from 'express'
+import { Router } from 'express'
 import {
   getPostsHandler,
   postPostsHandler,
@@ -6,9 +6,9 @@ import {
   putPostByIdHandler,
   deletePostByIdHandler
 } from '../controllers/posts.mjs'
-import { validatePostPost, validatePostPut, validateParamsPostId } from '../validators/postValidator.mjs'
+import { validatePostPost, validatePostPut, validateParamsPostId } from '../midleware/validators/postValidator.mjs'
 
-const postsRouter = express.Router()
+const postsRouter = Router()
 
 postsRouter.route('/').get(getPostsHandler).post(validatePostPost, postPostsHandler)
 

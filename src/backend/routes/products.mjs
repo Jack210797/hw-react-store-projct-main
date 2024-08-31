@@ -6,7 +6,11 @@ import {
   putProductByIdHandler,
   deleteProductByIdHandler
 } from '../controllers/products.mjs'
-import { validateProductPost, validateProductPut, validateParamsProductId } from '../validators/productValidator.mjs'
+import {
+  validateProductPost,
+  validateProductPut,
+  validateParamsProductId
+} from '../midleware/validators/productValidator.mjs'
 
 const productRouter = Router()
 

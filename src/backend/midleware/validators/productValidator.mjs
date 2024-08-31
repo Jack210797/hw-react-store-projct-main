@@ -5,7 +5,7 @@ const productShmema = Joi.object({
   name: Joi.string().min(3).required(),
   description: Joi.string().min(10).required(),
   price: Joi.number().integer().positive().required(),
-  image: Joi.string().url().required(),
+  image: Joi.string().uri().required(),
   category: Joi.string().required()
 })
 

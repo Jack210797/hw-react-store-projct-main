@@ -1,11 +1,11 @@
-import express from 'express'
+import { Router } from 'express'
 import { rootRouter } from './root.mjs'
 import { usersRouter } from './users.mjs'
 import { postsRouter } from './posts.mjs'
 import { todosRouter } from './todos.mjs'
 import { productRouter } from './products.mjs'
 
-const router = express.Router()
+const router = Router()
 
 router.use('/', rootRouter)
 router.use('/users', usersRouter)

@@ -33,12 +33,20 @@
 
 ## Структура проекту
 
-- `src/components`: Компоненти React
-- `src/pages`: Сторінки додатку
-- `src/redux`: Конфігурація Redux та слайси
-- `src/types`: TypeScript інтерфейси
-- `src/utils`: Допоміжні функції
-- `src/routes` та `src/controllers`: Серверна частина додатку
+1. `src`: Основна структура проекту
+2. `src/backend`: Серверна частина додатку:
+   1. `src/backend/controllers`: Контролери для обробки запитів
+   2. `src/backend/routes`: Маршрути для обробки запитів
+   3. `src/backend/midleware`: Middleware для обробки запитів
+3. `src/frontend`: Фронтенд-частина додатку:
+   1. `src/frontend/components`: Компоненти React;
+   2. `src/frontend/pages`: Сторінки додатку;
+   3. `src/frontend/hooks`: Хукі для React;
+   4. `src/frontend/modals`: Модальні вікна;
+   5. `src/frontend/redux`: Конфігурація Redux та слайси;
+   6. `src/frontend/types`: TypeScript інтерфейси;
+4. `src/utils`: Допоміжні функції
+5. `src/data`: Файли з даними
 
 ## Використання
 
@@ -54,6 +62,28 @@
 
 Для запуску серверної частини використовується команда `yarn start`, яку попередньо треба добавити у файл `/package.json`. У розділ `"scripts":` добавити строку `"start": "nodemon src/app.mjs"`. Вона запустить сервер на локальному сервері `на порту 3000`.
 
+## Модуль аутентифікації
+
+Цей модуль забезпечує функціональність аутентифікації та авторизації для Express додатку.
+
+### Основні функції
+
+- `generateToken`: Створює JWT токен для аутентифікованого користувача.
+- `authenticateToken`: Middleware для перевірки JWT токена.
+- `requireAuth`: Middleware для забезпечення авторизації.
+
+## Модуль валідації
+
+Цей модуль забезпечує валідацію даних, що надходять від клієнта до сервера.
+
+### Основні функції
+
+- `validateUser`: Валідація даних користувача.
+- `validateProduct`: Валідація даних продукту.
+- `validatePost`: Валідація даних поста.
+- `validateTodo`: Валідація даних завдання.
+- `validateAuthPost`: Валідація даних аутентифікації.
+
 ## Маршрути
 
 - http://localhost:3000/ - Головна сторінка "Home"
@@ -65,6 +95,7 @@
 - http://localhost:3000/posts/:id - Сторінка "Post", обробляє запити GET, PUT, DELETE
 - http://localhost:3000/todos - Сторінка "Todos", обробляє запити GET, POST
 - http://localhost:3000/todos/:id - Сторінка "Todo", обробляє запити GET, PUT, DELETE
+- http://localhost:3000/login - Сторінка "Login", обробляє запити POST, створює токен
 
 ## Тестування маршрутів
 

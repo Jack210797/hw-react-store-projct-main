@@ -1,4 +1,4 @@
-import express from 'express'
+import { Router } from 'express'
 import {
   getUsersHandler,
   postUsersHandler,
@@ -6,9 +6,9 @@ import {
   putUserByIdHandler,
   deleteUserByIdHandler
 } from '../controllers/users.mjs'
-import { validateUserPost, validateUserPut, validateParamsUserId } from '../validators/userValidator.mjs'
+import { validateUserPost, validateUserPut, validateParamsUserId } from '../midleware/validators/userValidator.mjs'
 
-const usersRouter = express.Router()
+const usersRouter = Router()
 
 usersRouter.route('/').get(getUsersHandler).post(validateUserPost, postUsersHandler)
 
