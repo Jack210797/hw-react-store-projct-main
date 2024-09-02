@@ -10,7 +10,6 @@ const errorHandler = (err, req, res, next) => {
 const cleanError = (err, req, res, next) => {
   const cleanErrorHandler = sanitizeObject(err)
   res.status(500).json(cleanErrorHandler)
-  next()
 }
 
 export { errorHandler, cleanError }

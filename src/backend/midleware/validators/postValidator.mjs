@@ -1,6 +1,6 @@
 import { celebrate, Joi, Segments } from 'celebrate'
 
-const userShmema = Joi.object({
+const userSchema = Joi.object({
   userId: Joi.number().integer().positive().required(),
   id: Joi.number().integer().positive().required(),
   title: Joi.string().required(),
@@ -8,11 +8,11 @@ const userShmema = Joi.object({
 })
 
 const validatePostPost = celebrate({
-  [Segments.BODY]: userShmema
+  [Segments.BODY]: userSchema
 })
 
 const validatePostPut = celebrate({
-  [Segments.BODY]: userShmema
+  [Segments.BODY]: userSchema
 })
 
 const validateParamsPostId = celebrate({
